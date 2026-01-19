@@ -5,7 +5,7 @@
 
 ## 2) Repositorio (fork) y gestión de versiones
 - Repositorio base: https://github.com/profeInformatica101/tareasSpringBoot
-- Enlace a MI fork: [PON AQUÍ EL ENLACE CUANDO LO CREES]
+- Enlace a MI fork: https://github.com/SergioCamposDelgado/tareasSpringBoot
 - Nº de commits realizados: (mínimo 5)
 
 ## 3) Arquitectura
@@ -16,7 +16,7 @@ Explica brevemente cómo has organizado:
 - Entity:
 
 ## 4) Base de datos elegida (marca una)
-- [ ] H2
+- [X] H2
 - [ ] MySQL
 - [ ] PostgreSQL
 
@@ -28,8 +28,7 @@ Explica brevemente cómo has organizado:
 (Pega aquí tu configuración SIN contraseñas reales si es necesario)
 
 ### 5.3 Pasos para crear la BD (si aplica)
-- MySQL: CREATE DATABASE ...
-- PostgreSQL: createdb ...
+No aplica (H2 esta en memoria)
 
 ## 6) Cómo ejecutar el proyecto
 1. Requisitos (Java versión, Maven/Gradle, DB instalada si aplica)
