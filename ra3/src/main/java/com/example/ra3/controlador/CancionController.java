@@ -30,7 +30,7 @@ public class CancionController {
 	 * GET /cancion (listar)
 	 * GET /cancion/nuevo (formulario alta)
 	 * POST /cancion (crear)
-	 * GET /cancion/{id}/editar (editar)
+	 * GET /cancion/{id}/editar (editar) 
 	 * POST /cancion/{id} (actualizar)
 	 * POST /cancion/{id}/borrar (eliminar)
 	 */
