@@ -2,38 +2,47 @@ package com.example.ra3.servicio;
 
 import java.util.List;
 
-import com.example.ra3.entidad.Cancion;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
 
+import com.example.ra3.entidad.Cancion;
+import com.example.ra3.repositorio.CancionRepositorio;
+
+@Primary
+@Service
 public class CancionServicioH2 implements CancionServicio{
 
+	CancionRepositorio repositorio;
+	
+	public CancionServicioH2(CancionRepositorio repositorio) {
+		this.repositorio = repositorio;
+	}
+	
 	@Override
 	public List<Cancion> obtenerCanciones() {
-		// TODO Auto-generated method stub
-		return null;
+		return repositorio.findAll();		
 	}
 
 	@Override
 	public Cancion obtenerCancionPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return repositorio.getReferenceById(id);
 	}
 
 	@Override
 	public void agregarCancion(Cancion cancion) {
-		// TODO Auto-generated method stub
-		
+		repositorio.save(cancion);
 	}
 
 	@Override
 	public void actualizarCancion(Cancion cancion) {
-		// TODO Auto-generated method stub
-		
+		if(repositorio.existsById(cancion.getId())) {
+			repositorio.save(cancion);
+		}		
 	}
 
 	@Override
 	public void eliminarCancion(int id) {
-		// TODO Auto-generated method stub
-		
+		repositorio.deleteById(id);		
 	}
 
 }
