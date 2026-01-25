@@ -12,7 +12,7 @@ import jakarta.annotation.PostConstruct;
 public class IniciarDatos {
 
 
-	private final int TOTAL_PRUEBAS = 10;
+	private final int TOTAL_PRUEBAS = 15;
 	private CancionServicio cancionServicio;
 
 	

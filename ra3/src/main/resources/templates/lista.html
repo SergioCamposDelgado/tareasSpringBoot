@@ -16,40 +16,44 @@
 
 <body>
 	<div th:replace="fragments/layout :: cabecera"></div>
-<span class="alert alert-warning" th:if="${listaCanciones.size() == 0}">
-    Esto está vacío
-</span>
 
-<div th:unless="${listaCanciones.isEmpty()}">
-    <table class="table">
+	<div class="container">	
+
+	<div class="alert alert-warning text-center" th:if="${listaCanciones.size() == 0}">
+	    Esto está vacío
+	</div>
+
+<div th:unless="${listaCanciones.isEmpty()}" class="table-responsive rounded-3 border border-light">
+    <table class="table table-hover align-middle mb-0">
+		<tr>
+			<th>Nombre</th>
+			<th>Duracion</th>
+			<th>Acciones</th>
+		</tr>
+		
         <tr th:each="cancion : ${listaCanciones}">
             <td><span th:text="${cancion.nombre}"></span></td>
-            <td><span th:text="${cancion.duracion}"></span></td>
+            <td><span th:text="${cancion.duracionString}"></span></td>
 
-            <!-- Ver detalle: /cancion/{id} -->
-            <td>
-                <a th:href="@{/cancion/{id}(id=${cancion.id})}">
-                    Ver detalle
-                </a>
-            </td>
 
             <!-- Editar: /cancion/{id}/editar -->
-            <td>
-                <a th:href="@{/cancion/{id}/editar(id=${cancion.id})}">
-                    Editar
-                </a>
-            </td>
+			<td>
+			    <a th:href="@{/cancion/{id}/editar(id=${cancion.id})}" 
+			       class="btn btn-sm btn-outline-success btn-light me-2">
+				   ✏️ Editar
+			    </a>
+			    <a th:href="@{/cancion/{id}/eliminar(id=${cancion.id})}" 
+			       class="btn btn-sm btn-outline-danger btn-light"
+			       onclick="return confirm('¿Confirmas la eliminación?');">
+			        🗑️ Eliminar
+			    </a>
+			</td>
 
-            <!-- Eliminar: /cancion/{id}/eliminar -->
-            <td>
-                <a th:href="@{/cancion/{id}/eliminar(id=${cancion.id})}">
-                    Eliminar
-                </a>
-            </td>
         </tr>
     </table>
 </div>
 
+</div>
 <div th:replace="fragments/layout :: pie"></div>
 
 </body>

@@ -82,4 +82,11 @@ public class CancionController {
         return "formulario"; // mismo formulario que para crear
     }
 	
+    
+    //borrar
+    @GetMapping("/cancion/{id}/eliminar")
+    public String eliminarProducto(@PathVariable int id) {
+    	servicio.eliminarCancion(id);
+    	return "redirect:/cancion";
+    }
 }

@@ -47,6 +47,15 @@ public class Cancion {
 		return duracion;
 	}
 	
+	public String getDuracionString() {
+	    int segundosTotal = this.getDuracion(); 
+	    
+	    int min = segundosTotal / 60;
+	    int seg = segundosTotal % 60;
+	    
+	    return min + ":" + String.format("%02d", seg);
+	}
+	
 	public void setId(Integer id) {
 		this.id = id;
 	}
