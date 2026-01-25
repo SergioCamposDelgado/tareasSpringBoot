@@ -6,7 +6,7 @@
 ## 2) Repositorio (fork) y gestión de versiones
 - Repositorio base: https://github.com/profeInformatica101/tareasSpringBoot
 - Enlace a MI fork: https://github.com/SergioCamposDelgado/tareasSpringBoot
-- Nº de commits realizados: (mínimo 5)
+- Nº de commits realizados: 10
 
 ## 3) Arquitectura
 Explica brevemente cómo has organizado:
@@ -55,7 +55,7 @@ No aplica (H2 esta en memoria)
 2. Comando de arranque:
    - ./mvnw spring-boot:run   (o equivalente)
 3. URL de acceso:
-   - http://localhost:8080/...
+   - http://localhost:9000/
 
 ## 7) Pantallas / Rutas MVC
 - GET /entidad (listar)
